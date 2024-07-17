@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>Calculadora</h1>
+    <form id="calculatorForm">    
+      <div class="mb-3">
+        <label for="username" class="form-label">Nome de Usuário</label>
+        <input type="text" class="form-control" id="username" required>
+      </div>    
+      <div class="mb-3">
+        <label for="num1" class="form-label">Número 1</label>
+        <input type="number" class="form-control" id="num1" required>
+      </div>
+      <div class="mb-3">
+        <label for="num2" class="form-label">Número 2</label>
+        <input type="number" class="form-control" id="num2" required>
+      </div>
+      <div class="mb-3">
+        <label for="num3" class="form-label">Número 3</label>
+        <input type="number" class="form-control" id="num3" required>
+      </div>
+      <div class="mb-3">
+        <label for="num4" class="form-label">Número 4</label>
+        <input type="number" class="form-control" id="num4" required>
+      </div>
+      <div class="mb-3">
+        <label for="num5" class="form-label">Número 5</label>
+        <input type="number" class="form-control" id="num5" required>
+      </div>
+      <div class="mb-3">
+        <label for="num6" class="form-label">Número 6</label>
+        <input type="number" class="form-control" id="num6" required>
+      </div>      
+      <button type="submit" class="btn btn-primary">Calcular Soma</button>
+    </form>    
+    <div id="result" class="mt-3"></div>
+  </div>  
+  <script>
+    document.getElementById('calculatorForm').addEventListener('submit', function(event) {      
+      event.preventDefault();      
+      const username = document.getElementById('username').value;
+      const num1 = parseFloat(document.getElementById('num1').value);
+      const num2 = parseFloat(document.getElementById('num2').value);
+      const num3 = parseFloat(document.getElementById('num3').value);
+      const num4 = parseFloat(document.getElementById('num4').value);
+      const num5 = parseFloat(document.getElementById('num5').value);
+      const num6 = parseFloat(document.getElementById('num6').value);      
+      if (!isNaN(num1) && !isNaN(num2) && !isNaN(num3) && !isNaN(num4) && !isNaN(num5) && !isNaN(num6)) {      
+        const sum = num1 + num2 + num3 + num4 + num5 + num6;        
+        document.getElementById('result').innerHTML = `<h2>Olá, ${username}! Sua soma é: ${sum}</h2>`;
+      } else {      
+        document.getElementById('result').innerHTML = "<h2>Por favor, insira apenas números válidos.</h2>";
+      }
+    });
+  </script>
+</body>
+</html>
